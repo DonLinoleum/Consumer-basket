@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobileApp.MainPage">
+
+    <StackLayout BackgroundColor="Black">
+
+        <Label Text="Потребительская корзина!!!" FontSize="20" TextColor="Azure"  
+               HorizontalTextAlignment="Center" Padding="20" FontFamily="Montserrat_b"/>
+
+        <Image Source="basket.png" Scale="0.8" Margin="20,-45" />
+
+        <Entry x:Name="productEntry" FontSize="Small" FontFamily="Montserrat" TextColor="Azure" Placeholder="Что покупаем?" 
+               PlaceholderColor="FloralWhite" HorizontalTextAlignment="Center" 
+               Margin="20, 10, 20, 0" 
+               />
+
+        <BoxView HeightRequest="1" BackgroundColor="White" HorizontalOptions="FillAndExpand" Margin="20,-14.2,20,20" />
+
+        <Button x:Name="addProduct" FontFamily="Montserrat" BackgroundColor="DarkKhaki" FontSize="Small" BorderWidth="1" HorizontalOptions="CenterAndExpand" 
+                Text="Добавить" CornerRadius="15" Clicked="AddProduct"  />
+
+        <StackLayout>
+            <ListView x:Name="productList" HasUnevenRows="True"  ItemTapped="CrossProductName">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Frame  CornerRadius="8" BackgroundColor="AntiqueWhite" BorderColor="Gray" 
+                                 Padding="15" HorizontalOptions="FillAndExpand" Margin="10,5,10,5">
+                                    <Label x:Name="productLabel"  FontFamily="Montserrat" TextColor="Black"  Text="{Binding Name}" FontSize="Small" HorizontalOptions="CenterAndExpand" />
+                                </Frame>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+        <Button x:Name="deleteAll" FontFamily="Montserrat" BackgroundColor="DarkKhaki" FontSize="Small" BorderWidth="1" HorizontalOptions="CenterAndExpand"
+                Text="Удалить все" CornerRadius="15" Clicked="DeleteProducts"/>
+
+    </StackLayout>
+</ContentPage>

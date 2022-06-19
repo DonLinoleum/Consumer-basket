@@ -21,14 +21,14 @@
                 Text="Добавить" CornerRadius="15" Clicked="AddProduct"  />
 
         <StackLayout>
-            <ListView x:Name="productList" HasUnevenRows="True"  ItemTapped="CrossProductName">
+            <ListView x:Name="productList" HasUnevenRows="True"  ItemTapped="StrikethroughProductName">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
                                 <Frame  CornerRadius="8" BackgroundColor="AntiqueWhite" BorderColor="Gray" 
                                  Padding="15" HorizontalOptions="FillAndExpand" Margin="10,5,10,5">
-                                    <Label x:Name="productLabel"  FontFamily="Montserrat" TextColor="Black"  Text="{Binding Name}" FontSize="Small" HorizontalOptions="CenterAndExpand" />
+                                    <Label x:Name="productLabel" TextDecorations="{Binding Strikethrough}"  FontFamily="Montserrat" TextColor="Black"  Text="{Binding Name}" FontSize="Small" HorizontalOptions="CenterAndExpand" />
                                 </Frame>
                             </ViewCell.View>
                         </ViewCell>

@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using Xamarin.Forms;
 
 namespace mobileApp
 {
@@ -10,6 +11,7 @@ namespace mobileApp
 
         public string Name { get; set; }
 
-        public string Crossed { get; set; }
+        public Xamarin.Forms.TextDecorations Strikethrough { get; set; }
+       
     }
 }
